@@ -1,0 +1,32 @@
+# State data
+states = [
+    {"Name": "Maharashtra", "Area": 307713, "Population": 112374333},
+    {"Name": "Gujarat", "Area": 196024, "Population": 60439692},
+    {"Name": "Rajasthan", "Area": 342239, "Population": 68548437},
+    {"Name": "Uttar Pradesh", "Area": 240928, "Population": 199812341},
+    {"Name": "Madhya Pradesh", "Area": 308245, "Population": 72626809}
+]
+
+# a) Complete information
+print("\nComplete State Information:\n")
+for state in states:
+    print(state)
+
+# b) State with largest area
+largest_area = max(states, key=lambda x: x["Area"])
+print("\nState with Largest Area:", largest_area["Name"])
+
+# c) State with largest population
+largest_population = max(states, key=lambda x: x["Population"])
+print("State with Largest Population:", largest_population["Name"])
+
+# d) Calculate population density
+print("\nPopulation Density of States:")
+for state in states:
+    density = state["Population"] / state["Area"]
+    state["Density"] = density
+    print(state["Name"], ":", round(density, 2))
+
+# e) State with highest density
+highest_density = max(states, key=lambda x: x["Density"])
+print("\nState with Highest Population Density:", highest_density["Name"])
